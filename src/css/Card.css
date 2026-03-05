@@ -1,0 +1,61 @@
+/* Contenedor principal */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Ocultar scrollbar en navegadores modernos */
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Card individual estilo naipe */
+.card {
+  flex: 0 0 200px; /* ancho fijo, no se encoge ni crece */
+  height: 300px; /* altura fija */
+  background-color: #ffffff20; /* semitransparente */
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto hover */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Títulos */
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Párrafos dentro de la card */
+.card p {
+  margin: 4px 0;
+  font-size: 1rem;
+}
+
+/* H1 principal */
+h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}

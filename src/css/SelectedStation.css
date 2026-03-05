@@ -1,0 +1,45 @@
+.station-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.station-label {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.station-select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ffffff20;
+  color: #fff;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.2s;
+}
+
+.station-select:hover {
+  background-color: #ffffff35;
+}
+
+.station-selected {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+select{
+  background-color: #2d3748;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px 25px;
+}
