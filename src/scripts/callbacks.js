@@ -1,5 +1,6 @@
 
-const BASE_URL = "http://localhost:8080/api";
+//const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://trenesagr.onrender.com:8080/api";
 
 export const getProximosArribos = async (id) => {
     try {
@@ -8,7 +9,7 @@ export const getProximosArribos = async (id) => {
         if (!res.ok) {
             throw new Error("Error al obtener arribos");
         }
-        
+
         return await res.json();
 
     } catch (error) {
