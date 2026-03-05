@@ -3,6 +3,7 @@ import { getProximosArribos } from "../scripts/callbacks";
 import { minutosFaltantes } from "../scripts/format";
 import "../css/Card.css";
 import "../css/Loader.css";
+import "../css/Responsive.css";
 
 const CardTrain = ({ estacionId }) => {
     const [arribos, setArribos] = useState([]);

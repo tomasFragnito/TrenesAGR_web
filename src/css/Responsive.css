@@ -1,0 +1,45 @@
+/* ===== RESPONSIVE PARA CELULAR ===== */
+@media (max-width: 768px) {
+
+  .card-container {
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 160px);
+    gap: 12px;
+    padding: 10px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .card {
+    width: 260px;
+    height: 200px;
+    min-height: 180px;
+    padding: 12px;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+}
+
+/* ===== CELULARES MUY CHICOS ===== */
+@media (max-width: 480px) {
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  select {
+    width: 160px;
+  }
+
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getEstacion } from "../scripts/callbacks";
 import "../css/SelectedStation.css";
+import "../css/Responsive.css";
 
 const SelectedStation = ({ onStationSelect }) => {
     const [estacion, setStation] = useState("Temperley");
