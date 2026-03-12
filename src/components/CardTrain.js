@@ -49,24 +49,65 @@ const CardTrain = ({ estacionId }) => {
     // Lista de terminales
     //consti, bosques, la plata
     let destino;
+    let classNameConsti;
 
-    if(estacionId == "93" || estacionId == "43" || estacionId == "217" ){
+    if(estacionId === "93" || estacionId === "43" || estacionId === "217" ){
         destino = "Parte en";
+        classNameConsti = "card-container consti";
     }
     else{
         destino = "Llegada";
+        classNameConsti = "card-container left";
     }
 
+    const constitucion = arribosFiltrados.filter(a => 
+        a.cabeceraFinal.includes("Plaza C.")
+    );
+
+    const otros = arribosFiltrados.filter(a => 
+        !a.cabeceraFinal.includes("Plaza C.")
+    ); 
+
     return (
-        <div className="card-container">
-            {arribosFiltrados.map((arribo, index) => (
-                <div key={index} className="card">
-                <h2>Tren</h2>
-                <p><strong>Destino:</strong> {arribo.cabeceraFinal}</p>
-                <p><strong>Andén:</strong> {arribo.anden}</p>
-                <p><strong>{destino}:</strong> {minutosFaltantes(arribo.llegada)} min.</p>
-                </div>
-            ))}
+        <div className="container-global">
+            {/* Otros destinos */}
+            <div className={classNameConsti}>
+                {otros.map((arribo, index) => (
+                    <div key={index} className="card">
+                        <div className="divAnden">
+                            <strong>Andén</strong> <h2>{arribo.anden}</h2>
+                        </div>
+
+                        <div className="divDestino">
+                            <p>{arribo.cabeceraFinal}</p>
+                        </div>
+
+                        <div className="divTime">
+                            <p><strong>{destino}:</strong> {minutosFaltantes(arribo.llegada)} min.</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Constitución */}
+            <div className="card-container right">
+                {constitucion.map((arribo, index) => (
+                    <div key={index} className="card">
+                        <div className="divAnden">
+                            <strong>Andén</strong> <h2>{arribo.anden}</h2>
+                        </div>
+
+                        <div className="divDestino">
+                            <p>{arribo.cabeceraFinal}</p>
+                        </div>
+
+                        <div className="divTime">
+                            <p><strong>{destino}:</strong> {minutosFaltantes(arribo.llegada)} min.</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
         </div>
     );
 };

@@ -1,61 +1,91 @@
 /* Contenedor principal */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, 250px);
+  grid-template-columns: repeat(2, 250px);
+  grid-auto-rows: 300px;
   justify-content: center;
   gap: 20px;
   padding: 20px;
   font-family: Arial, sans-serif;
-  color: #fff;
 }
 
-/* Ocultar scrollbar en navegadores modernos */
-.card-container::-webkit-scrollbar {
-  display: none;
-}
-.card-container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+/* Layout global */
+.container-global{
+  display:flex;
+  justify-content:center;
+  gap:40px;
 }
 
-/* Card individual estilo naipe */
+/* Card estilo naipe */
 .card {
-  flex: 0 0 200px; /* ancho fijo, no se encoge ni crece */
-  height: 300px; /* altura fija */
-  background-color: #ffffff20; /* semitransparente */
-  border-radius: 12px;
-  padding: 15px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background: transparent;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Efecto hover */
+/* Hover */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
 }
 
-/* Títulos */
-.card h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #fff;
+/* Parte superior - Andén */
+.divAnden{
+  height:100px;
+  background:#2d3748;
+  color:white;
+
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  gap:10px;             /* espacio entre texto y número */
+  font-size: 20px;
 }
 
-/* Párrafos dentro de la card */
-.card p {
-  margin: 4px 0;
-  font-size: 1rem;
+.divAnden h2{
+  margin:0;
+  font-size:2rem;
 }
 
-/* H1 principal */
-h1 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #fff;
+/* Parte central - Destino */
+.divDestino{
+  height:60px;
+  background:white;
+  color:#2d3748;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+  font-size: 30px;
+}
+
+/* Parte inferior - Tiempo */
+.divTime{
+  height:200px;
+  background:#2d3748;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-size:1.1rem;
+}
+
+/* Variante cuando hay 4 columnas */
+.card-container.consti{
+  grid-template-columns: repeat(4, 250px);
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.container-global:has(.card-container.consti){
+  display:block;
+  text-align:center;
 }

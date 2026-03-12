@@ -4,7 +4,9 @@ import "../css/SelectedStation.css";
 import "../css/Responsive.css";
 
 const SelectedStation = ({ onStationSelect }) => {
-    const [estacion, setStation] = useState("Temperley");
+    const [estacion, setStation] = useState(() => {
+        return localStorage.getItem("estacion") || "Constitucion";
+    });
 
     const fetchEstacion = async (nombre) => {
         try {
@@ -24,6 +26,7 @@ const SelectedStation = ({ onStationSelect }) => {
     const handleChange = (e) => {
         const nombre = e.target.value;
         setStation(nombre);
+        localStorage.setItem("estacion", nombre);
         fetchEstacion(nombre);
     };
 

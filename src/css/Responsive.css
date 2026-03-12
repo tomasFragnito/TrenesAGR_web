@@ -1,20 +1,18 @@
 /* ===== RESPONSIVE PARA CELULAR ===== */
 @media (max-width: 768px) {
 
-  .card-container {
-    margin: 0 auto;
-    grid-template-columns: repeat(2, 160px);
-    gap: 12px;
-    padding: 10px;
-    justify-content: center;
-    justify-items: center;
+  .container-global{
+    flex-direction:row;
+    gap:10px;
+  }
+  
+  .card-container{
+    grid-template-columns: 1fr;
   }
 
-  .card {
-    width: 260px;
-    height: 200px;
-    min-height: 180px;
-    padding: 12px;
+  .card{
+    width:140px;
+    height:220px;
   }
 
   .card h2 {
@@ -43,3 +41,4 @@
   }
 
 }
+
